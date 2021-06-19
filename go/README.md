@@ -29,7 +29,27 @@ The easiest way to start developing Go modules for Podkrepi.bg is by using [Visu
 ```
 
 ## Minimal Taskfile
-TODO
+Create a `Taskfile.yml` in the root of the workspace. The configuration below contains a lint and a build step for a Go module. Consider specifying `generates` property for the tasks such that the tool can determine whether a step has to run or not based on the generated files' checksum. For more info see [this link](https://taskfile.dev/#/usage?id=prevent-unnecessary-work).
+
+```yaml
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  lint:
+    cmds:
+      - golangci-lint run
+  build:
+    cmds:
+      - go build .
+    silent: false
+```
+
+After the file is created, you can run the following command to lint the Go module:
+```bash
+task lint
+```
 
 ## Github Workflows
 TODO
