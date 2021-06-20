@@ -22,9 +22,8 @@ The easiest way to start developing Go modules for Podkrepi.bg is by using [Visu
 	],
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-		"source=${env:GOPATH}/pkg/mod/cache:/go/pkg/mod/cache"
-	],
-	"remoteUser": "vscode"
+		"source=${env:HOME}/go/pkg/mod/cache,target=/go/pkg/mod/cache"
+	]
 }
 ```
 
