@@ -1,4 +1,3 @@
-
 FROM golang:1.16-alpine
 
 RUN apk --no-cache add curl git zsh sudo
@@ -8,11 +7,11 @@ ENV TERM xterm
 ENV SHELL /bin/zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
+# Install gopls
+RUN go get -v golang.org/x/tools/gopls@latest
+
 # Install Taskfile
 RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
-
-# Install gopls
-RUN go get -u -v golang.org/x/tools/gopls 2>&1
 
 # Install golangci-lint
 RUN export PATH="$PATH:$(go env GOPATH)/bin"
