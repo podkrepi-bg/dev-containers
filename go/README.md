@@ -11,7 +11,7 @@ The easiest way to start developing Go modules for Podkrepi.bg is by using [Visu
 ```json
 {
 	"name": "Go",
-	"image": "ghcr.io/podkrepi-bg/go-devcontainer:v1.0.0",
+	"image": "ghcr.io/podkrepi-bg/go-devcontainer:v1.1.0",
 	"settings": {
 		"go.useLanguageServer": true
 	},
